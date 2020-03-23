@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require('cors')
 const expressGraphQL = require("express-graphql");
 const schema = require("./schema.js");
 const app = express();
+
+app.use(cors())
 
 app.get("/", (req,res) => {
   res.send(
