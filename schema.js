@@ -43,7 +43,7 @@ const Covid19 = new GraphQLObjectType({
       type: new GraphQLList(CountryType),
       resolve(parentValue, args) {
         return axios
-          .get("https://corona.lmao.ninja/countries")
+          .get("https://covid19search.netlify.com/_data/world.json")
           .then(res => res.data);
       }
     }
