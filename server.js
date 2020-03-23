@@ -6,11 +6,6 @@ const app = express();
 
 app.use(cors())
 
-app.get("/", (req,res) => {
-  res.send(
-    "<h2>COVID19-Graphql</h2><p>By <a href='https://github.com/sharadcodes'>sharadcodes</a></p><p>GOTO: <a href='https://sharad-gql-covid19.herokuapp.com/graphql'>https://sharad-gql-covid19.herokuapp.com/graphql</a></p>")
-});
-
 app.use(
   "/graphql",
   expressGraphQL({
@@ -18,6 +13,11 @@ app.use(
     graphiql: true
   })
 );
+
+app.get("/", (req,res) => {
+  res.send(
+    "<h2>COVID19-Graphql</h2><p>By <a href='https://github.com/sharadcodes'>sharadcodes</a></p><p>GOTO: <a href='https://sharad-gql-covid19.herokuapp.com/graphql'>https://sharad-gql-covid19.herokuapp.com/graphql</a></p>")
+});
 
 const port = process.env.PORT || 5500;
 app.listen(port, () => {
