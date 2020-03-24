@@ -41,6 +41,4 @@ query: `{
 | -------- |  ----------  | --------- |
 | - | - | - |
 
----
 
-> API USED: [NovelCOVID/API](https://github.com/NovelCOVID/API)
