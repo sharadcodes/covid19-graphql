@@ -39,6 +39,6 @@ query: `{
 
 | Project  | Github Repo | Live Demo |
 | -------- |  ----------  | --------- |
-| - | - | - |
+| COVIDLIVE | https://github.com/giacomoalonzi/covidlive.it | https://covidlive.it/ |
 
 
