@@ -3,6 +3,7 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
+  GraphQLFloat,
   GraphQLSchema,
   GraphQLList,
   GraphQNonNull
@@ -21,7 +22,8 @@ const CountryType = new GraphQLObjectType({
     recovered: { type: GraphQLInt },
     active: { type: GraphQLInt },
     critical: { type: GraphQLInt },
-    casesPerOneMillion: { type: GraphQLInt }
+    casesPerOneMillion: { type: GraphQLFloat },
+    deathsPerOneMillion: { type: GraphQLFloat }
   })
 });
 
