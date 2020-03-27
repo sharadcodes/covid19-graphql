@@ -37,16 +37,32 @@ const Covid19 = new GraphQLObjectType({
       },
       resolve(parentValue, args) {
         return axios
-          .get("https://covid19search.netlify.com/_data/countries/" + args.name + ".json")
+          .get(
+            "https://covid19search.netlify.com/_data/countries/" +
+              args.name +
+              ".json"
+          )
           .then(res => res.data);
       }
     },
     countries: {
       type: new GraphQLList(CountryType),
+      args: {
+        sortBy: { type: GraphQLString, defaultValue: "cases" },
+        order: { type: GraphQLString, defaultValue: "desc" }
+      },
       resolve(parentValue, args) {
         return axios
           .get("https://covid19search.netlify.com/_data/world.json")
-          .then(res => res.data);
+          .then(res => {
+            return res.data.sort((a, b) => {
+              if (args.order === "desc") {
+                return b[args.sortBy] - a[args.sortBy];
+              } else {
+                return a[args.sortBy] - b[args.sortBy];
+              }
+            });
+          });
       }
     }
   }
