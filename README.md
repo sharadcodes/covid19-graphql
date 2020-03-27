@@ -25,7 +25,40 @@ query: `{
                 active
                 critical
                 casesPerOneMillion
+                deathsPerOneMillion
             } 
+        }
+`
+})
+}
+)
+.then(res => res.json())
+.then(res => console.log(res.data));
+```
+# FOR SORTING DATA
+
+Use `sortBy` followed by the key name and `order` folowed by either `desc` or `aesc`. Order os desc by default.
+
+```js
+fetch(
+"https://sharad-gql-covid19.herokuapp.com/graphql",
+{
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+query: `{
+              countries(sortBy: "cases", order: "desc") {
+                country
+                cases
+                todayCases
+                deaths
+                todayDeaths
+                recovered
+                active
+                critical
+                casesPerOneMillion
+                deathsPerOneMillion
+              }
         }
 `
 })
