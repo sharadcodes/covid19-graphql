@@ -35,7 +35,7 @@ query: `{
 .then(res => res.json())
 .then(res => console.log(res.data));
 ```
-# FOR SORTING DATA
+## FOR SORTING DATA
 
 Use `sortBy` followed by the key name and `order` folowed by either `desc` or `aesc`. 
 
