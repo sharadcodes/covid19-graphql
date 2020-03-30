@@ -16,7 +16,11 @@ headers: { "Content-Type": "application/json" },
 body: JSON.stringify({
 query: `{
             countries {
-                country
+                country    
+                countryInfo {
+                  lat
+                  long
+                }
                 cases
                 todayCases
                 deaths
@@ -49,6 +53,10 @@ body: JSON.stringify({
 query: `{
               countries(sortBy: "cases", order: "desc") {
                 country
+                countryInfo {
+                  lat
+                  long
+                }                
                 cases
                 todayCases
                 deaths
