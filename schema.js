@@ -11,10 +11,19 @@ const {
 
 // root query
 
+const meta = new GraphQLObjectType({
+  name: "meta",
+  fields: () => ({
+    lat: { type: GraphQLFloat },
+    long: { type: GraphQLFloat }
+  })
+});
+
 const CountryType = new GraphQLObjectType({
   name: "Country",
   fields: () => ({
     country: { type: GraphQLString },
+    countryInfo: {type: meta},
     cases: { type: GraphQLInt },
     todayCases: { type: GraphQLInt },
     deaths: { type: GraphQLInt },
