@@ -39,9 +39,11 @@ query: `{
 .then(res => res.json())
 .then(res => console.log(res.data));
 ```
-# FOR SORTING DATA
+## FOR SORTING DATA
 
-Use `sortBy` followed by the key name and `order` folowed by either `desc` or `aesc`. Order os desc by default.
+Use `sortBy` followed by the key name and `order` folowed by either `desc` or `aesc`. 
+
+`sortBy` is `cases` by default & `order` is `desc` by default.
 
 ```js
 fetch(
