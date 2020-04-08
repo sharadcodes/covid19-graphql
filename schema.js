@@ -47,7 +47,7 @@ const Covid19 = new GraphQLObjectType({
       resolve(parentValue, args) {
         return axios
           .get(
-            "https://covid19search.netlify.com/_data/countries/" +
+            "https://c-data.now.sh/countries/" +
               args.name +
               ".json"
           )
@@ -62,7 +62,7 @@ const Covid19 = new GraphQLObjectType({
       },
       resolve(parentValue, args) {
         return axios
-          .get("https://covid19search.netlify.com/_data/world.json")
+          .get("https://c-data.now.sh/world.json")
           .then(res => {
             return res.data.sort((a, b) => {
               if (args.order === "desc") {
