@@ -47,7 +47,7 @@ const Covid19 = new GraphQLObjectType({
       resolve(parentValue, args) {
         return axios
           .get(
-            "https://c-data.now.sh/countries/" +
+            "https://sharadcodes.github.io/c-data/data/countries/" +
               args.name +
               ".json"
           )
@@ -62,7 +62,7 @@ const Covid19 = new GraphQLObjectType({
       },
       resolve(parentValue, args) {
         return axios
-          .get("https://c-data.now.sh/world.json")
+          .get("https://sharadcodes.github.io/c-data/data//world.json")
           .then(res => {
             return res.data.sort((a, b) => {
               if (args.order === "desc") {
